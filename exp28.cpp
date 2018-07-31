@@ -1,5 +1,3 @@
-#include <iostream>
-using namespace std;
-
-int mian (){
-  
+/*
+141页剧毒, ea;
+*/

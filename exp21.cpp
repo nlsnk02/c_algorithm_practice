@@ -1,7 +1,9 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 //使用队列
+/*
 int wd[1000];
 int heads,iends;
 void cg();
@@ -34,4 +36,18 @@ int main (){
     rm();
     cout << "\n";
 }
+*/
 //使用vector
+
+int main (){
+    vector<int> lst;
+    for (int i=0; i<5; i++) lst.push_back(i);
+    while (lst.size() > 1){
+        printf("%d\n", lst[0]);
+        lst.erase(lst.begin());
+        int temp = lst[lst.size()-1];
+        lst[lst.size()-1] = lst[0];
+        lst[0] = temp;
+    }printf("%d\n", lst[0]);
+    return 0;
+}
