@@ -5,7 +5,8 @@
         "string": "cpp",
         "vector": "cpp",
         "iostream": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "ios": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
