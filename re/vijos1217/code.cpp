@@ -1,8 +1,9 @@
 //vijos 1217
 #include <iostream>
+
 using namespace std;
 
-char cg[300]={0};
+char cg[10000]={0};
 
 int dr (int a, int b){
     int temp = a - b;
@@ -13,14 +14,14 @@ int dr (int a, int b){
 int main (){
     char ifm;
     int i =0;
-    while(ifm = getchar()){
+    while((ifm = getchar())){
         if (ifm == 'E') break;
         if (ifm == 'W' || ifm == 'L') cg[i++]=ifm; 
     }
-    int ws=0, ls=0, len = strlen(cg);
-    for(i=0;i<len;i++){
-        if (cg[i] == 'W') ws++;
-        if (cg[i] == 'L') ls++;
+    int ws=0, ls=0;
+    for(int j=0;j<i;j++){
+        if (cg[j] == 'W') ws++;
+        if (cg[j] == 'L') ls++;
         if ((ws >= 11 || ls >= 11) && dr(ws, ls)){
             printf("%d:%d\n", ws, ls);
             ws=0;ls=0;
@@ -31,14 +32,15 @@ int main (){
     printf("%d:%d\n\n", ws, ls);
     ws=0;ls=0;
 
-    for(i=0;i<len;i++){
-        if (cg[i] == 'W') ws++;
-        if (cg[i] == 'L') ls++;
-        if ((ws >= 11 || ls >= 11) && dr(ws, ls)){
+    for(int j=0;j<i;j++){
+        if (cg[j] == 'W') ws++;
+        if (cg[j] == 'L') ls++;
+        if ((ws >= 21 || ls >= 21) && dr(ws, ls)){
             printf("%d:%d\n", ws, ls);
             ws=0;ls=0;
         }
     }
+    printf("%d:%d\n", ws, ls);
 
     return 0;
 }
